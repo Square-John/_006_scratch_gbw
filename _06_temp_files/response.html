@@ -1,0 +1,2881 @@
+<html>
+
+<head>
+
+<title>工标网-查询 【混凝土
+】标准</title>
+
+<META http-equiv=Content-Type content="text/html; charset=gbk">
+
+<link rel="shortcut icon" href="/images/gb.ico">
+
+<meta name="description" content="混凝土
+标准 混凝土
+实效">
+
+<meta name="keywords" content="标准搜索 标准时效 标准状态 标准查询 ">
+
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<SCRIPT language=javascript src="/css/comm.js"></SCRIPT>
+
+<script language="javascript">
+
+
+
+function selectchange(url)
+
+{ 
+
+	document.form_Search.action=url ;
+
+	document.form_Search.submit();
+
+}
+
+
+
+function checkpage()
+
+{     
+
+     var k=0;
+
+     var flag=0;
+
+     for(k=0;k<form_Search.elements.length;k++)
+
+     {
+
+     	if(form_Search.elements[k].name=="pageno")
+
+     	{
+
+     	 	
+
+     		flag=1;
+
+     		break;
+
+     	}
+
+     }
+
+     if(flag==0)
+
+     {
+
+     
+
+     	return;
+
+      }
+
+      else if(isNaN(form_Search.elements[k].value)){
+
+           alert("您输入了无效页码，请输入数字");
+
+           form_Search.elements[k].value="";           
+
+           return;
+
+           }
+
+     else{  
+
+               var str=form_Search.elements[k].value;
+
+               var intvalue=0;
+
+		for(var i=0;i<str.length;i++){
+
+			if(chartoint(str.substring(i,i+1))==-1){
+
+				alert("您输入的页码不正确，请输入整数");
+
+				form_Search.elements[k].value="";
+
+				 return;
+
+			}
+
+			intvalue = intvalue*10+chartoint(str.substring(i,i+1));
+
+			
+
+			if((intvalue>60)||(intvalue<1)){
+
+			         alert("您输入的页码超出可取范围，请重输");
+
+			         form_Search.elements[k].value="";			         
+
+			         return;			         
+
+			}
+
+			
+
+		}
+
+	}	
+
+	
+
+}
+
+
+
+
+
+function doPage(pageNum)
+
+{
+
+		form_Search.pageNum.value=pageNum;
+
+		form_Search.action="/s.jsp";
+
+		form_Search.submit();
+
+}
+
+
+
+
+
+
+
+
+
+function doSort(aSortField)
+
+{
+
+		/*
+
+		if (form_Search.SortField.value==aSortField) 
+
+		{
+
+		  if (form_Search.SortWay.value=="asc"){
+
+		     form_Search.SortWay.value = "desc";
+
+			 }
+
+		   else	 
+
+		    form_Search.SortWay.value = "asc";
+
+		} else
+
+		{
+
+			form_Search.SortWay.value="asc";
+
+		}*/
+
+		
+
+		if (form_Search.SortIndex.value==aSortField) 
+
+		{
+
+		  if (form_Search.WayIndex.value==0){
+
+		     form_Search.WayIndex.value = 1;
+
+			 }
+
+		   else	 
+
+		    form_Search.WayIndex.value = 0;
+
+		} else
+
+		{
+
+			form_Search.WayIndex.value=0;
+
+		}
+
+		
+
+		form_Search.SortIndex.value=aSortField;
+
+		form_Search.action="/s.jsp";
+
+		form_Search.submit();
+
+}
+
+
+
+
+
+</script>
+
+
+
+<body bgcolor="#FFFFFF" text="#000000" topmargin=0 marginheight=0 leftmargin=0 marginwidth=0 >
+
+
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" align=center >
+
+  <form method="get" action="/s.jsp" name="form_Search" onSubmit="return dofind()">
+
+   <tr> 
+
+      <td align="center">
+
+
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" >
+
+  <tr>
+
+    <td width="215"  align="left" valign="top">&nbsp;<a href="/"></a><a href="/"><img src="/images/ny_logo.gif" alt="工标网 回首页" border="0" /></a></td>
+
+<td width="550" align="left"><table width="510" border="0" cellspacing="0" cellpadding="0">
+
+<tr>
+
+					  <td width="68%"><a href="/sort/index.jsp" class="slan13">标准分类</a>&nbsp; <a href="/new/index.jsp" class="slan13">最新标准</a><sup><span style="font-size: 11pt"><font color=red>New!</font></span></sup>&nbsp; <a href="/notice/index.jsp" class="slan13">标准公告</a> <a href="/info/index.jsp" class="slan13">标准动态</a>&nbsp; <a href="/bbs/index.jsp" class="slan13">标准论坛</a></td>
+
+				  </tr>
+
+				  <tr>
+
+					<td><input name="keyword" type="text" size="49" value="混凝土
+">
+
+         					 <input name="submit12" type="submit" value="标准搜索">&nbsp;<a href="/advanced/index.jsp" class="slan13">高级查询</a></td>
+
+		  </tr>
+
+				</table>
+
+   </td>
+
+       <td width="681" align="right"><table width="250" border="0" cellspacing="0" cellpadding="0">
+
+			  <tr>
+
+				<td align="center"><a href="/sys/help.htm" target="_blank" class="slan13">帮助</a> |  <a href="/user/logon.jsp" class="slan13">登录</a> | <a href="/user/register.jsp" class="slan13">注册</a></td>
+
+			  </tr>
+
+			  <tr>
+
+				<td align="center"><img src="/images/adci.gif" alt="查标准上工标网 免费查询标准最新替代作废信息" width="228" height="21"></td>
+
+	     </tr>
+
+			</table>
+
+  </td>
+
+  </tr>
+
+</table>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+  <tr>
+
+    <td height="27" valign="top" background="/images/ny_bg1.gif" bgColor=#a1b3d4><TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+        <TBODY>
+
+        <TR vAlign=center>
+
+          <TD width="75%" height=27 align=left vAlign=center class=crumbTrail><span class="bai12xi">&nbsp;共找到2978条相关标准，现行2034，作废680，废止214，未实施50，耗时0.117秒</span></TD>
+
+          <TD width="25%" height=22 align=right vAlign=center class=helpLink>
+
+            <span class="bai12cu"><a href="javascript:window.external.AddFavorite('http://www.csres.com','工业标准咨询网')" class="bai12" title="收藏本站，下次需要查标准时候就来工标网">收藏本站</a></span> &nbsp;<a href="/service/web.htm" target="_blank" title="点击联系在线客服，有什么问题我们帮您解决！！" class="bai12">联系客服</a>&nbsp;</TD>
+
+        </TR></TBODY></TABLE></td>
+
+  </tr>
+
+</table>
+
+		
+
+</td>
+
+    </tr>
+
+	  
+
+    <tr> 
+
+      <td align="center">
+
+	  <table width="100%" border="0" cellspacing="1" cellpadding="0" class=heng>
+
+		<thead class="th1" >	 
+
+            <tr > 
+
+              <th width=18% height="23">标准编号</th>
+
+              <th width=50%>标准名称</th>
+
+              <th width=17%>发布部门</th>
+
+              <th width=9%>实施日期</th>
+
+              <th width=6%>状态</th>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411113);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：NB/T 11550-2024 &#xA;标题：地下工程约束混凝土支护规范&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：国家能源局&#xA;发布日期：2024-05-24&#xA;发布日期：2024-11-24"> 
+
+              <td align="left">&nbsp;<a href="/detail/411113.html" target="_blank"><font color="#009900">NB/T 11550-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">地下工程约束混凝土支护规范</font></td>
+
+              <td ><font color="#009900">
+
+                国家能源局
+
+                </font></td>
+
+				<td ><font color="#009900">2024-11-24</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(410020);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CI 273-2024 &#xA;标题：建筑及市政工程海水海砂纤维筋混凝土应用技术规程&#xA;英文标题： &#xA;分类：P40&#xA;ICS：93.010 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国国际科技促进会&#xA;发布日期：2024-01-18&#xA;发布日期：2024-01-18"> 
+
+              <td align="left">&nbsp;<a href="/detail/410020.html" target="_blank"><font color="#000000">T/CI 273-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">建筑及市政工程海水海砂纤维筋混凝土应用技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                中国国际科技促进会
+
+                </font></td>
+
+				<td ><font color="#000000">2024-01-18</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(396963);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JC/T 60018-2023 &#xA;标题：现浇混凝土养护技术规范&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国工业和信息化部&#xA;发布日期：2023-07-28&#xA;发布日期：2024-02-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/396963.html" target="_blank"><font color="#000000">JC/T 60018-2023</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">现浇混凝土养护技术规范</font></td>
+
+              <td ><font color="#000000">
+
+                工业和信息化部
+
+                </font></td>
+
+			
+
+1ff8
+
+	<td ><font color="#000000">2024-02-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(410130);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CCTAS 101-2024 &#xA;标题：铁路预应力混凝土桥梁智能张拉与压浆施工技术规程&#xA;英文标题： &#xA;分类：P28&#xA;ICS：93.040 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国交通运输协会&#xA;发布日期：2024-04-07&#xA;发布日期：2024-04-15"> 
+
+              <td align="left">&nbsp;<a href="/detail/410130.html" target="_blank"><font color="#000000">T/CCTAS 101-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">铁路预应力混凝土桥梁智能张拉与压浆施工技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                中国交通运输协会
+
+                </font></td>
+
+				<td ><font color="#000000">2024-04-15</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(410381);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：24G912-1 &#xA;标题：装配式混凝土结构工程施工示例（一）&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国住房和城乡建设部&#xA;发布日期：1900-01-01&#xA;发布日期：2024-06-20"> 
+
+              <td align="left">&nbsp;<a href="/detail/410381.html" target="_blank"><font color="#009900">24G912-1</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">装配式混凝土结构工程施工示例（一）</font></td>
+
+              <td ><font color="#009900">
+
+                住房和城乡建设部
+
+                </font></td>
+
+				<td ><font color="#009900">2024-06-20</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(271545);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JT/T 990-2015 &#xA;标题：桥梁混凝土裂缝压注胶和裂缝注浆料&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国交通运输部&#xA;发布日期：2015-07-11&#xA;发布日期：2015-11-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/271545.html" target="_blank"><font color="#000000">JT/T 990-2015</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">桥梁混凝土裂缝压注胶和裂缝注浆料</font></td>
+
+              <td ><font color="#000000">
+
+                交通运输部
+
+                </font></td>
+
+				<td ><font color="#000000">2015-11-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411360);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DL/T 5877-2024 &#xA;标题：水工混凝土应用钢渣骨料技术规范&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：国家能源局&#xA;发布日期：2024-05-24&#xA;发布日期：2024-11-24"> 
+
+              <td align="left">&nbsp;<a href="/detail/411360.html" target="_blank"><font color="#009900">DL/T 5877-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">水工混凝土应用钢渣骨料技术规范</font></td>
+
+              <td ><font color="#009900">
+
+                国家能源局
+
+                </font></td>
+
+				<td ><font color="#009900">2024-11-24</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(360068);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DB31/T 1272-2021 &#xA;标题：绿色混凝土场站运维管理技术要求&#xA;英文标题： &#xA;分类：P01&#xA;ICS：13.020.01 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：上海市市场监督管理局&#xA;发布日期：2021-01-04&#xA;发布日期：2021-04-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/360068.html" target="_blank"><font color="#000000">DB31/T 1272-2021</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">绿色混凝土场站运维管理技术要求</font></td>
+
+              <td ><font color="#000000">
+
+                上海市市场监督管理局
+
+                </font></td>
+
+				<td ><font color="#000000">2021-04-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(390312);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1304-2023 &#xA;标题：预制单元装配式混凝土框架结构技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2023-03-26&#xA;发布日期：2023-08-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/390312.html" target="_blank"><font color="#000000">T/CECS 1304-2023</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">预制单元装配式混凝土框架结构技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#000000">2023-08-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(300563);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DB42/T 1238-2017 &#xA;标题：蒸压加气混凝土干法施工专用砂浆&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：湖北省质量技术监督局&#xA;发布日期：2017-02-15&#xA;发布日期：2017-04-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/300563.html" target="_blank"><font color="#FF0000">DB42/T 1238-2017</font></a></td>
+
+              <td align="left">&nbsp;<font color="#FF0000">蒸压加气混凝土干法施工专用砂浆</font></td>
+
+              <td ><font color="#FF0000">
+
+                湖北省质量技术监督局
+
+                </font></td>
+
+				<td ><font color="#FF0000">2017-04-01</font></td>
+
+				<td ><font color="#FF0000">废止</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(196603);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DB37/T 995-2008 &#xA;标题：混凝土配料秤&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：山东省质量技术监督局&#xA;发布日期：2007-12-01&#xA;发布日期：2008-05-15"> 
+
+              <td align="left">&nbsp;<a href="/detail/196603.html" target="_blank"><font color="#FF0000">DB37/T 995-2008</font></a></td>
+
+              <td align="left">&nbsp;<font color="#FF0000">混凝土配料秤</font></td>
+
+              <td ><font color="#FF0000">
+
+                山东省质量技术监督局
+
+                </font></td>
+
+				<td ><font color="#FF0000">2008-05-15</font></td>
+
+				<td ><font color="#FF0000">废止</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(338537);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DB31/T 1170-2019 &#xA;标题：再生骨料混凝土砌块（砖）技术要求&#xA;英文标题： &#xA;分类：Q15&#xA;ICS：91.100.30 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：上海市市场监督管理局&#xA;发布日期：2019-06-27&#xA;发布日期：2019-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/338537.html" target="_blank"><font color="#000000">DB31/T 1170-2019</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">再生骨料混凝土砌块（砖）技术要求</font></td>
+
+              <td ><font color="#000000">
+
+                上海市市场监督管理局
+
+                </font></td>
+
+				<td ><font color="#000000">2019-10-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover
+
+a href="javascript:window.external.AddFavorite('http://www.csres.com','工业标准咨询网')" class="bai12" title="收藏本站，下次需要查标准时候就来工标网">收藏本站</a></span> &nbsp;<a href="/service/web.htm" target="_blank" title="点击联系在线客服，有什么问题我们帮您解决！！" class="bai12">联系客服</a>&nbsp;</TD>
+
+        </TR></TBODY></TABLE></td>
+
+  </tr>
+
+</table>
+
+		
+
+</td>
+
+    </tr>
+
+	  
+
+    <tr> 
+
+      <td align="center">
+
+	  <table width="100%" border="0" cellspacing="1" cellpadding="0" class=heng>
+
+		<thead class="th1" >	 
+
+            <tr > 
+
+              <th width=18% height="23">标准编号</th>
+
+              <th width=50%>标准名称</th>
+
+              <th width=17%>发布部门</th>
+
+              <th width=9%>实施日期</th>
+
+              <th width=6%>状态</th>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411113);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：NB/T 11550-2024 &#xA;标题：地下工程约束混凝土支护规范&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：国家能源局&#xA;发布日期：2024-05-24&#xA;发布日期：2024-11-24"> 
+
+              <td align="left">&nbsp;<a href="/detail/411113.html" target="_blank"><font color="#009900">NB/T 11550-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">地下工程约束混凝土支护规范</font></td>
+
+              <td ><font color="#009900">
+
+                国家能源局
+
+                </font></td>
+
+				<td ><font color="#009900">2024-11-24</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(410020);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CI 273-2024 &#xA;标题：建筑及市政工程海水海砂纤维筋混凝土应用技术规程&#xA;英文标题： &#xA;分类：P40&#xA;ICS：93.010 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国国际科技促进会&#xA;发布日期：2024-01-18&#xA;发布日期：2024-01-18"> 
+
+              <td align="left">&nbsp;<a href="/detail/410020.html" target="_blank"><font color="#000000">T/CI 273-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">建筑及市政工程海水海砂纤维筋混凝土应用技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                中国国际科技促进会
+
+                </font></td>
+
+				<td ><font color="#000000">2024-01-18</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(396963);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JC/T 60018-2023 &#xA;标题：现浇混凝土养护技术规范&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国工业和信息化部&#xA;发布日期：2023-07-28&#xA;发布日期：2024-02-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/396963.html" target="_blank"><font color="#000000">JC/T 60018-2023</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">现浇混凝土养护技术规范</font></td>
+
+              <td ><font color="#000000">
+
+                工业和信息化部
+
+                </font></td>
+
+			
+
+1ff8
+
+	<td ><font color="#000000">2024-02-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(410130);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CCTAS 101-2024 &#xA;标题：铁路预应力混凝土桥梁智能张拉与压浆施工技术规程&#xA;英文标题： &#xA;分类：P28&#xA;ICS：93.040 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国交通运输协会&#xA;发布日期：2024-04-07&#xA;发布日期：2024-04-15"> 
+
+              <td align="left">&nbsp;<a href="/detail/410130.html" target="_blank"><font color="#000000">T/CCTAS 101-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">铁路预应力混凝土桥梁智能张拉与压浆施工技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                中国交通运输协会
+
+                </font></td>
+
+				<td ><font color="#000000">2024-04-15</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(410381);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：24G912-1 &#xA;标题：装配式混凝土结构工程施工示例（一）&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国住房和城乡建设部&#xA;发布日期：1900-01-01&#xA;发布日期：2024-06-20"> 
+
+              <td align="left">&nbsp;<a href="/detail/410381.html" target="_blank"><font color="#009900">24G912-1</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">装配式混凝土结构工程施工示例（一）</font></td>
+
+              <td ><font color="#009900">
+
+                住房和城乡建设部
+
+                </font></td>
+
+				<td ><font color="#009900">2024-06-20</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(271545);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JT/T 990-2015 &#xA;标题：桥梁混凝土裂缝压注胶和裂缝注浆料&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国交通运输部&#xA;发布日期：2015-07-11&#xA;发布日期：2015-11-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/271545.html" target="_blank"><font color="#000000">JT/T 990-2015</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">桥梁混凝土裂缝压注胶和裂缝注浆料</font></td>
+
+              <td ><font color="#000000">
+
+                交通运输部
+
+                </font></td>
+
+				<td ><font color="#000000">2015-11-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411360);" 
+
+                onmouseo1ff8
+
+="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(323978);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：GB/T 23439-2017/XG1-2018 &#xA;标题：《混凝土膨胀剂》国家标准第1号修改单&#xA;英文标题： &#xA;分类：Q12&#xA;ICS：91.100.30 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国国家质量监督检验检疫总局  中国国家标准化管理委员会&#xA;发布日期：2017-12-29&#xA;发布日期：2019-11-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/323978.html" target="_blank"><font color="#000000">GB/T 23439-2017/XG1-2018</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">《混凝土膨胀剂》国家标准第1号修改单</font></td>
+
+              <td ><font color="#000000">
+
+                国家质量监督检验检疫.
+
+                </font></td>
+
+				<td ><font color="#000000">2019-11-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(401736);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1502-2023 &#xA;标题：超高性能混凝土集成模块建筑技术标准&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2023-12-18&#xA;发布日期：2024-05-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/401736.html" target="_blank"><font color="#000000">T/CECS 1502-2023</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">超高性能混凝土集成模块建筑技术标准</font></td>
+
+              <td ><font color="#000000">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#000000">2024-05-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411402);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1608-2024 &#xA;标题：再生块体再生骨料混凝土应用技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-05-16&#xA;发布日期：2024-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/411402.html" target="_blank"><font color="#009900">T/CECS 1608-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">再生块体再生骨料混凝土应用技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-10-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411093);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：NB/T 11530-2024 &#xA;标题：矿用液压混凝土喷射机械手通用技术条件&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：国家能源局&#xA;发布日期：2024-05-24&#xA;发布日期：2024-11-24"> 
+
+              <td align="left">&nbsp;<a href="/detail/411093.html" target="_blank"><font color="#009900">NB/T 11530-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">矿用液压混凝土喷射机械手通用技术条件</font></td>
+
+              <td ><font color="#009900">
+
+                国家能源局
+
+                </font></td>
+
+				<td ><font color="#009900">2024-11-24</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(403449);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JC/T 1091-2023 &#xA;标题：混凝土管接头用型钢&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国工业和信息化部&#xA;发布日期：2023-12-20&#xA;发布日期：2024-07-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/403449.html" target="_blank"><font color="#009900">JC/T 1091-2023</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">混凝土管接头用型钢</font></td>
+
+              <td ><font color="#009900">
+
+                工业和信息化部
+
+                </font></td>
+
+				<td ><font color="#009900">2024-07-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(396961);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JC/T 60017-2023 &#xA;标题：水泥厂预应力混凝土筒仓技术规范&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国工业和信息化部&#xA;发布日期：2023-07-28&#xA;发布日期：2024-02-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/396961.html" target="_blank"><font color="#000000">JC/T 60017-2023</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">水泥厂预应力混凝土筒仓技术规范</font></td>
+
+              <td ><font color="#000000">
+
+                工业和信息化部
+
+                </font></td>
+
+				<td ><font color="#000000">2024-02-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(257194);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：CJJ/T 230-2015 &#xA;标题：排水工程混凝土模块砌体结构技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国住房和城乡建设部&#xA;发布日期：2015-01-09&#xA;发布日期：2015-09-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/257194.html" target="_blank"><font color="#000000">CJJ/T 230-2015</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">排水工程混凝土模块砌体结构技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                住房和城乡建设部
+
+                </font></td>
+
+				<td ><font color="#000000">2015-09-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(408169);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1557-2024 &#xA;标题：装配式断桥保温承重双排孔混凝土墙板应用技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-02-22&#xA;发布日期：2024-07-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/408169.html" target="_blank"><font color="#009900">T/CECS 1557-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">装配式断桥保温承重双排孔混凝土墙板应用技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-07-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411098);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：NB/T 11535-2024 &#xA;标题：喷射混凝土回弹率测定试验方法&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：国家能源局&#xA;发布日期：2024-05-24&#xA;发布日期：2024-11-24"> 
+
+              <td align="left">&nbsp;<a href="/detail/411098.html" target="_blank"><font color="#009900">NB/T 11535-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">喷射混凝土回弹率测定试验方法</font></td>
+
+              <td ><font color="#009900">
+
+                国家能源局
+
+                </font></td>
+
+				<td ><font color="#009900">2024-11-24</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411412);" 
+
+                onmouseout="mOut(
+
+1ff8
+
+this,'#FFFFFF');"  title="编号：T/CECS G：D66-04-2024 &#xA;标题：公路装配式钢筋混凝土涵洞技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-05-22&#xA;发布日期：2024-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/411412.html" target="_blank"><font color="#009900">T/CECS G：D66-04-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">公路装配式钢筋混凝土涵洞技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-10-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411435);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1622-2024 &#xA;标题：既有建筑外套钢筋混凝土结构抗震加固技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-05-28&#xA;发布日期：2024-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/411435.html" target="_blank"><font color="#009900">T/CECS 1622-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">既有建筑外套钢筋混凝土结构抗震加固技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-10-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(182608);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DL/T 5055-2007 &#xA;标题：水工混凝土掺用粉煤灰技术规范&#xA;英文标题： &#xA;分类：P59&#xA;ICS：91.100.10 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国国家发展和改革委员会&#xA;发布日期：2007-07-20&#xA;发布日期：2007-12-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/182608.html" target="_blank"><font color="#000000">DL/T 5055-2007</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">水工混凝土掺用粉煤灰技术规范</font></td>
+
+              <td ><font color="#000000">
+
+                国家发展和改革委员会
+
+                </font></td>
+
+				<td ><font color="#000000">2007-12-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(331916);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JTS 167-15-2019 &#xA;标题：水运工程预制高强混凝土薄壁钢管桩设计与施工规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国交通运输部&#xA;发布日期：2019-08-02&#xA;发布日期：2019-09-30"> 
+
+              <td align="left">&nbsp;<a href="/detail/331916.html" target="_blank"><font color="#000000">JTS 167-15-2019</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">水运工程预制高强混凝土薄壁钢管桩设计与施工规程</font></td>
+
+              <td ><font color="#000000">
+
+                交通运输部
+
+                </font></td>
+
+				<td ><font color="#000000">2019-09-30</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(410154);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CCTAS 79-2023 &#xA;标题：公路水泥混凝土路面加铺沥青复合封层技术规范&#xA;英文标题： &#xA;分类：R18&#xA;ICS：93.080.01 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国交通运输协会&#xA;发布日期：2023-12-07&#xA;发布日期：2023-12-31"> 
+
+              <td align="left">&nbsp;<a href="/detail/410154.html" target="_blank"><font color="#000000">T/CCTAS 79-2023</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">公路水泥混凝土路面加铺沥青复合封层技术规范</font></td>
+
+              <td ><font color="#000000">
+
+                中国交通运输协会
+
+                </font></td>
+
+				<td ><font color="#000000">2023-12-31</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(219755);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：GB 50666-2011 &#xA;标题：混凝土结构工程施工规范&#xA;英文标题： &#xA;分类：P25&#xA;ICS：91.080.40 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国住房和城乡建设部&#xA;发布日期：2011-07-29&#xA;发布日期：2012-08-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/219755.html" target="_blank"><font color="#000000">GB 50666-2011</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">混凝土结构工程施工规范</font></td>
+
+              <td ><font color="#000000">
+
+                住房和城乡建设部
+
+                </font></td>
+
+				<td ><font color="#000000">2012-08-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(308848);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：GB/T 23439-2017 &#xA;标题：混凝土膨胀剂&#xA;英文标题： &#xA;分类：Q12&#xA;ICS：91.100.30 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国国家质量监督检验检疫总局  中国国家标准化管理委员会&#xA;发布日期：2017-12-29&#xA;发布日期：2018-11-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/308848.html" target="_blank"><font color="#000000">GB/T 23439-2017</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">混凝土膨胀剂</font></td>
+
+              <td ><font color="#000000">
+
+                国家质量监督检验检疫.
+
+                </font></td>
+
+				<td ><font color="#000000">2018-11-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(228789);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DB31/T 478.12-2011 &#xA;标题：主要工业产品用水定额及其计算方法 第12部分:建材行业（商品混凝土）&#xA;英文标题： &#xA;分类：P40&#xA;ICS：13.060.25 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：上海市质量技术监督局&#xA;发布日期：2012-07-26&#xA;发布日期：2012-07-26"> 
+
+              <td align="left">&nbsp;<a href="/detail/228789.html" target="_blank"><font color="#000000">DB31/T 478.12-2011</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">主要工业产品用水定额及其计算方法 第12部分:建材行业（商品混凝土）</font></td>
+
+              <td ><font color="#000000">
+
+                上海市质量技术监督局
+
+                </font></td>
+
+				<td ><font color="#000000">2012-07-26</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+         ? &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国工业和信息化部&#xA;发布日期：2023-12-20&#xA;发布日期：2024-07-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/403449.html" target="_blank"><font color="#009900">JC/T 1091-2023</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">混凝土管接头用型钢</font></td>
+
+              <td ><font color="#009900">
+
+                工业和信息化部
+
+                </font></td>
+
+				<td ><font color="#009900">2024-07-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(396961);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JC/T 60017-2023 &#xA;标题：水泥厂预应力混凝土筒仓技术规范&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国工业和信息化部&#xA;发布日期：2023-07-28&#xA;发布日期：2024-02-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/396961.html" target="_blank"><font color="#000000">JC/T 60017-2023</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">水泥厂预应力混凝土筒仓技术规范</font></td>
+
+              <td ><font color="#000000">
+
+                工业和信息化部
+
+                </font></td>
+
+				<td ><font color="#000000">2024-02-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(257194);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：CJJ/T 230-2015 &#xA;标题：排水工程混凝土模块砌体结构技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国住房和城乡建设部&#xA;发布日期：2015-01-09&#xA;发布日期：2015-09-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/257194.html" target="_blank"><font color="#000000">CJJ/T 230-2015</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">排水工程混凝土模块砌体结构技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                住房和城乡建设部
+
+                </font></td>
+
+				<td ><font color="#000000">2015-09-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(408169);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1557-2024 &#xA;标题：装配式断桥保温承重双排孔混凝土墙板应用技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-02-22&#xA;发布日期：2024-07-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/408169.html" target="_blank"><font color="#009900">T/CECS 1557-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">装配式断桥保温承重双排孔混凝土墙板应用技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-07-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411098);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：NB/T 11535-2024 &#xA;标题：喷射混凝土回弹率测定试验方法&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：国家能源局&#xA;发布日期：2024-05-24&#xA;发布日期：2024-11-24"> 
+
+              <td align="left">&nbsp;<a href="/detail/411098.html" target="_blank"><font color="#009900">NB/T 11535-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">喷射混凝土回弹率测定试验方法</font></td>
+
+              <td ><font color="#009900">
+
+                国家能源局
+
+                </font></td>
+
+				<td ><font color="#009900">2024-11-24</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411412);" 
+
+                onmouseout="mOut(
+
+1ff8
+
+this,'#FFFFFF');"  title="编号：T/CECS G：D66-04-2024 &#xA;标题：公路装配式钢筋混凝土涵洞技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-05-22&#xA;发布日期：2024-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/411412.html" target="_blank"><font color="#009900">T/CECS G：D66-04-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">公路装配式钢筋混凝土涵洞技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-10-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411435);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1622-2024 &#xA;标题：既有建筑外套钢筋混凝土结构抗震加固技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-05-28&#xA;发布日期：2024-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/411435.html" target="_blank"><font color="#009900">T/CECS 1622-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">既有建筑外套钢筋混凝土结构抗震加固技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-10-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(182608);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DL/T 5055-2007 &#xA;标题：水工混凝土掺用粉煤灰技术规范&#xA;英文标题： &#xA;分类：P59&#xA;ICS：91.100.10 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国国家发展和改革委员会&#xA;发布日期：2007-07-20&#xA;发布日期：2007-12-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/182608.html" target="_blank"><font color="#000000">DL/T 5055-2007</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">水工混凝土掺用粉煤灰技术规范</font></td>
+
+              <td ><font color="#000000">
+
+                国家发展和改革委员会
+
+                </font></td>
+
+				<td ><font color="#000000">2007-12-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(331916);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JTS 167-15-2019 &#xA;标题：水运工程预制高强混凝土薄壁钢管桩设计与施工规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国交通运输部&#xA;发布日期：2019-08-02&#xA;发布日期：2019-09-30"> 
+
+              <td align="left">&nbsp;<a href="/detail/331916.html" target="_blank"><font color="#000000">JTS 167-15-2019</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">水运工程预制高强混凝土薄壁钢管桩设计与施工规程</font></td>
+
+              <td ><font color="#000000">
+
+                交通运?   
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411389);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：NB/T 11011-2022/XG1-2024 &#xA;标题：《水工混凝土结构设计规范》行业标准第1号修改单&#xA;英文标题： &#xA;分类：P59&#xA;ICS：27.140 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：国家能源局&#xA;发布日期：2024-05-24&#xA;发布日期：2024-05-24"> 
+
+              <td align="left">&nbsp;<a href="/detail/411389.html" target="_blank"><font color="#000000">NB/T 11011-2022/XG1-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">《水工混凝土结构设计规范》行业标准第1号修改单</font></td>
+
+              <td ><font color="#000000">
+
+                国家能源局
+
+                </font></td>
+
+				<td ><font color="#000000">2024-05-24</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclic
+
+"#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(219755);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：GB 50666-2011 &#xA;标题：混凝土结构工程施工规范&#xA;英文标题： &#xA;分类：P25&#xA;ICS：91.080.40 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国住房和城乡建设部&#xA;发布日期：2011-07-29&#xA;发布日期：2012-08-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/219755.html" target="_blank"><font color="#000000">GB 50666-2011</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">混凝土结构工程施工规范</font></td>
+
+              <td ><font color="#000000">
+
+                住房和城乡建设部
+
+                </font></td>
+
+				<td ><font color="#000000">2012-08-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(308848);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：GB/T 23439-2017 &#xA;标题：混凝土膨胀剂&#xA;英文标题： &#xA;分类：Q12&#xA;ICS：91.100.30 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国国家质量监督检验检疫总局  中国国家标准化管理委员会&#xA;发布日期：2017-12-29&#xA;发布日期：2018-11-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/308848.html" target="_blank"><font color="#000000">GB/T 23439-2017</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">混凝土膨胀剂</font></td>
+
+              <td ><font color="#000000">
+
+                国家质量监督检验检疫.
+
+                </font></td>
+
+				<td ><font color="#000000">2018-11-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(228789);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DB31/T 478.12-2011 &#xA;标题：主要工业产品用水定额及其计算方法 第12部分:建材行业（商品混凝土）&#xA;英文标题： &#xA;分类：P40&#xA;ICS：13.060.25 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：上海市质量技术监督局&#xA;发布日期：2012-07-26&#xA;发布日期：2012-07-26"> 
+
+              <td align="left">&nbsp;<a href="/detail/228789.html" target="_blank"><font color="#000000">DB31/T 478.12-2011</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">主要工业产品用水定额及其计算方法 第12部分:建材行业（商品混凝土）</font></td>
+
+              <td ><font color="#000000">
+
+                上海市质量技术监督局
+
+                </font></td>
+
+				<td ><font color="#000000">2012-07-26</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+         ? &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国工业和信息化部&#xA;发布日期：2023-12-20&#xA;发布日期：2024-07-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/403449.html" target="_blank"><font color="#009900">JC/T 1091-2023</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">混凝土管接头用型钢</font></td>
+
+              <td ><font color="#009900">
+
+                工业和信息化部
+
+                </font></td>
+
+				<td ><font color="#009900">2024-07-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(396961);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JC/T 60017-2023 &#xA;标题：水泥厂预应力混凝土筒仓技术规范&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国工业和信息化部&#xA;发布日期：2023-07-28&#xA;发布日期：2024-02-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/396961.html" target="_blank"><font color="#000000">JC/T 60017-2023</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">水泥厂预应力混凝土筒仓技术规范</font></td>
+
+              <td ><font color="#000000">
+
+                工业和信息化部
+
+                </font></td>
+
+				<td ><font color="#000000">2024-02-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(257194);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：CJJ/T 230-2015 &#xA;标题：排水工程混凝土模块砌体结构技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国住房和城乡建设部&#xA;发布日期：2015-01-09&#xA;发布日期：2015-09-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/257194.html" target="_blank"><font color="#000000">CJJ/T 230-2015</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">排水工程混凝土模块砌体结构技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                住房和城乡建设部
+
+                </font></td>
+
+				<td ><font color="#000000">2015-09-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(408169);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1557-2024 &#xA;标题：装配式断桥保温承重双排孔混凝土墙板应用技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-02-22&#xA;发布日期：2024-07-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/408169.html" target="_blank"><font color="#009900">T/CECS 1557-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">装配式断桥保温承重双排孔混凝土墙板应用技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-07-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411098);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：NB/T 11535-2024 &#xA;标题：喷射混凝土回弹率测定试验方法&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：国家能源局&#xA;发布日期：2024-05-24&#xA;发布日期：2024-11-24"> 
+
+              <td align="left">&nbsp;<a href="/detail/411098.html" target="_blank"><font color="#009900">NB/T 11535-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">喷射混凝土回弹率测定试验方法</font></td>
+
+              <td ><font color="#009900">
+
+                国家能源局
+
+                </font></td>
+
+				<td ><font color="#009900">2024-11-24</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411412);" 
+
+                onmouseout="mOut(
+
+1ff8
+
+this,'#FFFFFF');"  title="编号：T/CECS G：D66-04-2024 &#xA;标题：公路装配式钢筋混凝土涵洞技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-05-22&#xA;发布日期：2024-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/411412.html" target="_blank"><font color="#009900">T/CECS G：D66-04-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">公路装配式钢筋混凝土涵洞技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-10-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411435);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1622-2024 &#xA;标题：既有建筑外套钢筋混凝土结构抗震加固技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-05-28&#xA;发布日期：2024-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/411435.html" target="_blank"><font color="#009900">T/CECS 1622-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">既有建筑外套钢筋混凝土结构抗震加固技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-10-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(182608);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DL/T 5055-2007 &#xA;标题：水工混凝土掺用粉煤灰技术规范&#xA;英文标题： &#xA;分类：P59&#xA;ICS：91.100.10 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国国家发展和改革委员会&#xA;发布日期：2007-07-20&#xA;发布日期：2007-12-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/182608.html" target="_blank"><font color="#000000">DL/T 5055-2007</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">水工混凝土掺用粉煤灰技术规范</font></td>
+
+              <td ><font color="#000000">
+
+                国家发展和改革委员会
+
+                </font></td>
+
+				<td ><font color="#000000">2007-12-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(331916);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JTS 167-15-2019 &#xA;标题：水运工程预制高强混凝土薄壁钢管桩设计与施工规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国交通运输部&#xA;发布日期：2019-08-02&#xA;发布日期：2019-09-30"> 
+
+              <td align="left">&nbsp;<a href="/detail/331916.html" target="_blank"><font color="#000000">JTS 167-15-2019</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">水运工程预制高强混凝土薄壁钢管桩设计与施工规程</font></td>
+
+              <td ><font color="#000000">
+
+                交通运?1ff8
+
+k="mClk(403443);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JC/T 746-2023 &#xA;标题：混凝土瓦&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国工业和信息化部&#xA;发布日期：2023-12-20&#xA;发布日期：2024-07-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/403443.html" target="_blank"><font color="#009900">JC/T 746-2023</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">混凝土瓦</font></td>
+
+              <td ><font color="#009900">
+
+                工业和信息化部
+
+                </font></td>
+
+				<td ><font color="#009900">2024-07-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411356);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DL/T 5873-2024 &#xA;标题：水电水利工程混凝土结构表面涂层防护技术规范&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：国家能源局&#xA;发布日期：2024-05-24&#xA;发布日期：2024-11-24"> 
+
+              <td align="left">&nbsp;<a href="/detail/411356.html" target="_blank"><font color="#009900">DL/T 5873-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">水电水利工程混凝土结构表面涂层防护技术规范</font></td>
+
+              <td ><font color="#009900">
+
+                国家能源局
+
+                </font></td>
+
+				<td ><font color="#009900">2024-11-24</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(242106);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JGJ/T 328-2014 &#xA;标题：预拌混凝土绿色生产及管理技术规程&#xA;英文标题： &#xA;分类：P20&#xA;ICS：91.100.30 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国住房和城乡建设部&#xA;发布日期：2014-04-16&#xA;发布日期：2014-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/242106.html" target="_blank"><font color="#000000">JGJ/T 328-2014</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">预拌混凝土绿色生产及管理技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                住房和城乡建设部
+
+                </font></td>
+
+				<td ><font color="#000000">2014-10-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(172126);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DG/TJ 08-017-2004 &#xA;标题：混凝土模卡砌块建筑设计规程(附条文说明)&#xA;英文标题： &#xA;分类：P24&#xA;ICS：91.080.30 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：&#xA;发布日期：1900-01-01&#xA;发布日期：2004-12-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/172126.html" target="_blank"><font color="#FF0000">DG/TJ 08-017-2004</font></a></td>
+
+              <td align="left">&nbsp;<font color="#FF0000">混凝土模卡砌块建筑设计规程(附条文说明)</font></td>
+
+              <td ><font color="#FF0000">
+
+                
+
+                </font></td>
+
+				<td ><font color="#FF0000">2004-12-01</font></td>
+
+				<td ><font color="#FF0000">作废</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(383904);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JC/T 1062-2022 &#xA;标题：泡沫混凝土砌块&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国工业和信息化部&#xA;发布日期：2022-09-30&#xA;发布日期：2023-04-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/383904.html" target="_blank"><font color="#000000">JC/T 1062-2022</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">泡沫混凝土砌块</font></td>
+
+              <td ><font color="#000000">
+
+                工业和信息化部
+
+                </font></td>
+
+				<td ><font color="#000000">2023-04-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(390313);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1305-2023 &#xA;标题：带暗框架的装配式混凝土剪力墙结构技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2023-03-26&#xA;发布日期：2023-08-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/390313.html" target="_blank"><font color="#000000">T/CECS 1305-2023</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">带暗框架的装配式混凝土剪力墙结构技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#000000">2023-08-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(398825);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1408-2023 &#xA;标题：低多层螺栓拼接装配式混凝土墙板建筑技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2023-08-18&#xA;发布日期：2024-01-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/398825.html" target="_blank"><font color="#000000">T/CECS 1408-2023</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">低多层螺栓拼接装配式混凝土墙板建筑技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#000000">2024-01-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(252850);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：SL 677-2014 &#xA;标题：水工混凝土施工规范&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国水利部&#xA;发布日期：2014-10-27&#xA;发布日期：2015-01-27"> 
+
+              <td align="left">&nbsp;<a href="/detail/252850.html" target="_blank"><font color="#000000">SL 677-2014</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">水工混凝土施工规范</font></td>
+
+              <td ><font color="#000000">
+
+                水利部
+
+                </font></td>
+
+				<td ><font color="#000000">2015-01-27</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(410356);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1594-2024 &#xA;标题：摩擦耗能式自复位混凝土剪力墙-框架结构技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-05-08&#xA;发布日期：2024-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/410356.html" target="_blank"><font color="#009900">T/CECS 1594-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">摩擦耗能式自复位混凝土剪力墙-框架结构技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-10-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(210000);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DL/T 5433-2009 &#xA;标题：水工碾压混凝土试验规程&#xA;英文标题： &#xA;分类：P59&#xA;ICS：27.140 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：国
+
+1ff8
+
+this,'#FFFFFF');"  title="编号：T/CECS G：D66-04-2024 &#xA;标题：公路装配式钢筋混凝土涵洞技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-05-22&#xA;发布日期：2024-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/411412.html" target="_blank"><font color="#009900">T/CECS G：D66-04-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">公路装配式钢筋混凝土涵洞技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-10-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411435);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1622-2024 &#xA;标题：既有建筑外套钢筋混凝土结构抗震加固技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-05-28&#xA;发布日期：2024-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/411435.html" target="_blank"><font color="#009900">T/CECS 1622-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">既有建筑外套钢筋混凝土结构抗震加固技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-10-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(182608);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DL/T 5055-2007 &#xA;标题：水工混凝土掺用粉煤灰技术规范&#xA;英文标题： &#xA;分类：P59&#xA;ICS：91.100.10 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国国家发展和改革委员会&#xA;发布日期：2007-07-20&#xA;发布日期：2007-12-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/182608.html" target="_blank"><font color="#000000">DL/T 5055-2007</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">水工混凝土掺用粉煤灰技术规范</font></td>
+
+              <td ><font color="#000000">
+
+                国家发展和改革委员会
+
+                </font></td>
+
+				<td ><font color="#000000">2007-12-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(331916);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JTS 167-15-2019 &#xA;标题：水运工程预制高强混凝土薄壁钢管桩设计与施工规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国交通运输部&#xA;发布日期：2019-08-02&#xA;发布日期：2019-09-30"> 
+
+              <td align="left">&nbsp;<a href="/detail/331916.html" target="_blank"><font color="#000000">JTS 167-15-2019</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">水运工程预制高强混凝土薄壁钢管桩设计与施工规程</font></td>
+
+              <td ><font color="#000000">
+
+                交通运?1ff8
+
+家能源局&#xA;发布日期：2009-07-22&#xA;发布日期：2009-12-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/210000.html" target="_blank"><font color="#000000">DL/T 5433-2009</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">水工碾压混凝土试验规程</font></td>
+
+              <td ><font color="#000000">
+
+                国家能源局
+
+                </font></td>
+
+				<td ><font color="#000000">2009-12-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(410361);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1599-2024 &#xA;标题：支架预应力混凝土叠合板应用技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-05-08&#xA;发布日期：2024-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/410361.html" target="_blank"><font color="#009900">T/CECS 1599-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">支架预应力混凝土叠合板应用技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-10-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(407213);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1538-2024 &#xA;标题：超高性能混凝土肋装配式楼板应用技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-01-30&#xA;发布日期：2024-06-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/407213.html" target="_blank"><font color="#000000">T/CECS 1538-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">超高性能混凝土肋装配式楼板应用技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#000000">2024-06-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(403309);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JC/T 2777-2023 &#xA;标题：公路工程用泡沫混凝土&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国工业和信息化部&#xA;发布日期：2023-12-20&#xA;发布日期：2024-07-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/403309.html" target="_blank"><font color="#009900">JC/T 2777-2023</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">公路工程用泡沫混凝土</font></td>
+
+              <td ><font color="#009900">
+
+                工业和信息化部
+
+                </font></td>
+
+				<td ><font color="#009900">2024-07-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411359);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DL/T 5876-2024 &#xA;标题：水工沥青混凝土应用酸性骨料技术规范&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：国家能源局&#xA;发布日期：2024-05-24&#xA;发布日期：2024-11-24"> 
+
+              <td align="left">&nbsp;<a href="/detail/411359.html" target="_blank"><font color="#009900">DL/T 5876-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">水工沥青混凝土应用酸性骨料技术规范</font></td>
+
+              <td ><font color="#009900">
+
+                国家能源局
+
+                </font></td>
+
+				<td ><font color="#009900">2024-11-24</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411413);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 10383-2024 &#xA;标题：钢纤维混凝土轻型预制楼梯&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-05-28&#xA;发布日期：2024-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/411413.html" target="_blank"><font color="#009900">T/CECS 10383-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">钢纤维混凝土轻型预制楼梯</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-10-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(401715);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1485-2023 &#xA;标题：清水混凝土修补与防护技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2023-12-08&#xA;发布日期：2024-05-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/401715.html" target="_blank"><font color="#000000">T/CECS 1485-2023</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">清水混凝土修补与防护技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#000000">2024-05-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(209138);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JGJ/T 178-2009 &#xA;标题：补偿收缩混凝土应用技术规程&#xA;英文标题： &#xA;分类：P25&#xA;ICS：91.100.30 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国住房和城乡建设部&#xA;发布日期：2009-06-16&#xA;发布日期：2009-12-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/209138.html" target="_blank"><font color="#000000">JGJ/T 178-2009</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">补偿收缩混凝土应用技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                住房和城乡建设部
+
+                </font></td>
+
+				<td ><font color="#000000">2009-12-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(275344);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DB31/T 828-2014 &#xA;标题：旧水泥混凝土路面共振碎石化技术规程&#xA;英文标题： &#xA;分类：P22&#xA;ICS：93.080.20 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：上海市质量技术监督局&#xA;发布日期：2014-08-22&#xA;发布日期：2014-12-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/275344.html" target="_blank"><font color="#000000">DB31/T 828-2014</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">旧水泥混凝土路面共振碎石化技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                上海市质量技术监督局
+
+                </font></td>
+
+				<td ><font color="#000000">2014-12-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(304549);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JT/T 1166-2017 &#xA;标题：桥梁高强混凝土抗压强度无损检测&#xA;英文标题： &#xA;分类：P28&#xA;ICS：93.040 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国交通运输部&#xA;发布日期：2017-09-29&#xA;发布日期：2018-02-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/304549.html" target="_blank"><font color="#000000">JT/T 1166-2017</fo
+
+1ff8
+
+this,'#FFFFFF');"  title="编号：T/CECS G：D66-04-2024 &#xA;标题：公路装配式钢筋混凝土涵洞技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-05-22&#xA;发布日期：2024-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/411412.html" target="_blank"><font color="#009900">T/CECS G：D66-04-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">公路装配式钢筋混凝土涵洞技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-10-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411435);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1622-2024 &#xA;标题：既有建筑外套钢筋混凝土结构抗震加固技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-05-28&#xA;发布日期：2024-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/411435.html" target="_blank"><font color="#009900">T/CECS 1622-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">既有建筑外套钢筋混凝土结构抗震加固技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-10-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(182608);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DL/T 5055-2007 &#xA;标题：水工混凝土掺用粉煤灰技术规范&#xA;英文标题： &#xA;分类：P59&#xA;ICS：91.100.10 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国国家发展和改革委员会&#xA;发布日期：2007-07-20&#xA;发布日期：2007-12-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/182608.html" target="_blank"><font color="#000000">DL/T 5055-2007</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">水工混凝土掺用粉煤灰技术规范</font></td>
+
+              <td ><font color="#000000">
+
+                国家发展和改革委员会
+
+                </font></td>
+
+				<td ><font color="#000000">2007-12-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(331916);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JTS 167-15-2019 &#xA;标题：水运工程预制高强混凝土薄壁钢管桩设计与施工规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国交通运输部&#xA;发布日期：2019-08-02&#xA;发布日期：2019-09-30"> 
+
+              <td align="left">&nbsp;<a href="/detail/331916.html" target="_blank"><font color="#000000">JTS 167-15-2019</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">水运工程预制高强混凝土薄壁钢管桩设计与施工规程</font></td>
+
+              <td ><font color="#000000">
+
+                交通运?1091
+
+nt></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">桥梁高强混凝土抗压强度无损检测</font></td>
+
+              <td ><font color="#000000">
+
+                交通运输部
+
+                </font></td>
+
+				<td ><font color="#000000">2018-02-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(303845);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DB14/T 1327-2016 &#xA;标题：环氧沥青混凝土桥面铺装施工技术指南&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：山西省质量技术监督局&#xA;发布日期：2016-12-30&#xA;发布日期：2017-02-28"> 
+
+              <td align="left">&nbsp;<a href="/detail/303845.html" target="_blank"><font color="#000000">DB14/T 1327-2016</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">环氧沥青混凝土桥面铺装施工技术指南</font></td>
+
+              <td ><font color="#000000">
+
+                山西省质量技术监督局
+
+                </font></td>
+
+				<td ><font color="#000000">2017-02-28</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+        </table></td>
+
+    </tr>
+
+    <tr> 
+
+
+
+      <td height="19"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+        <tr>
+
+          <td height="30">&nbsp;<span class="hei14">共有2978条符合状态条件的标准，共60页</span> 
+
+		  	<font style='font-size: 14px; color=#000000;'>1</font>&nbsp;<A HREF='javascript:doPage(2)' class=lan>[2]<a>&nbsp;<A HREF='javascript:doPage(3)' class=lan>[3]<a>&nbsp;<A HREF='javascript:doPage(4)' class=lan>[4]<a>&nbsp;<A HREF='javascript:doPage(5)' class=lan>[5]<a>&nbsp;<A HREF='javascript:doPage(6)' class=lan>[6]<a>&nbsp;<A HREF='javascript:doPage(7)' class=lan>[7]<a>&nbsp;<A HREF='javascript:doPage(2)' class=lan>[下一页]<a>
+
+		  <td width="280" align="right">
+
+		   <input name="xx" type="checkbox" checked onClick="doState()">现行
+
+		   <input name="wss" type="checkbox" checked onClick="doState()"><font color="#009900">即将实施</font>
+
+		   <input name="zf" type="checkbox" checked onClick="doState()"><font color="#FF0000">作废</font>
+
+		   <input name="fz" type="checkbox" checked onClick="doState()"><font color="#FF0000">废止</font>&nbsp;</td>
+
+		 </td>
+
+        </tr>
+
+      </table></td>
+
+    </tr>
+
+	
+
+	<tr> 
+
+      <td align="center">&nbsp;</td>
+
+    </tr>
+
+    <tr> 
+
+      <td>
+
+ 
+
+
+
+<TABLE width="100%"  cellPadding=0 cellSpacing=0 align=center>
+
+  <TBODY>
+
+    <TR>
+
+      <TD align=middle vAlign=middle class="hong14">购书咨询:0898-3137-2222/13876321121</TD>
+
+    </TR>
+
+    
+
+    <TR> 
+
+      <TD align=middle vAlign=middle><font color="#666666"><strong>QQ:</strong></font><a target=blank href=http://wpa.qq.com/msgrd?V=1&Uin=1197428036&Site=工标网&Menu=yes>1197428036</a>&nbsp;<a target=blank href=http://wpa.qq.com/msgrd?V=1&Uin=992023608&Site=工标网&Menu=yes>992023608</a>      <a href="https://tb.53kf.com/code/client/9007981/1" target="_blank" title="点击联系在线客服，有什么问题我们帮您解决！！"><span style="font-size:12px; color:#0000CC; text-decoration:underline">有问题？ 联系在线客服</span></a>
+
+</TD>
+
+    </TR>
+
+    <TR> 
+
+      <TD align=middle vAlign=center>版权所有2005-2021 海南讯海科技有限公司 经营许可证编号：<a href="https://beian.miit.gov.cn/" target="_blank">琼ICP备09001676号-1</a></TD>
+
+    </TR>
+
+    <TR>
+
+      <TD align=middle vAlign=center><a href="/pay/" target="_blank"><font color="red">付款方式</font></a> | <a href="/sys/contact.html" target="_blank">联系我们</a> | <a href="/sys/aboutus.htm" target="_blank">关于我们 </a>| <a href="/sys/partners.jsp" target="_blank">合作伙伴</a> | <a href="javascript:window.external.AddFavorite('http://www.csres.com','工标网')"> 收藏本站</a> | <a href="/sys/terms.html" target="_blank">使用条款</a></TD>
+
+    </TR>
+
+  </TBODY>
+
+</TABLE>
+
+
+
+</td>
+
+    </tr>
+
+<input type="hidden" name="pageSize" value="50">
+
+<input type="hidden" name="pageNum" value="1">
+
+<input type="hidden" name="SortIndex" value="1">
+
+<input type="hidden" name="WayIndex" value="0">
+
+<input type="hidden" name="nowUrl" value="">
+
+ </form>
+
+  </table>
+
+  </body>
+
+</html>
+
+
+
+
+
+0
+
+
+
+;"  title="编号：T/CECS 10383-2024 &#xA;标题：钢纤维混凝土轻型预制楼梯&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-05-28&#xA;发布日期：2024-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/411413.html" target="_blank"><font color="#009900">T/CECS 10383-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">钢纤维混凝土轻型预制楼梯</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-10-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(401715);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1485-2023 &#xA;标题：清水混凝土修补与防护技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2023-12-08&#xA;发布日期：2024-05-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/401715.html" target="_blank"><font color="#000000">T/CECS 1485-2023</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">清水混凝土修补与防护技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#000000">2024-05-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(209138);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JGJ/T 178-2009 &#xA;标题：补偿收缩混凝土应用技术规程&#xA;英文标题： &#xA;分类：P25&#xA;ICS：91.100.30 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国住房和城乡建设部&#xA;发布日期：2009-06-16&#xA;发布日期：2009-12-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/209138.html" target="_blank"><font color="#000000">JGJ/T 178-2009</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">补偿收缩混凝土应用技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                住房和城乡建设部
+
+                </font></td>
+
+				<td ><font color="#000000">2009-12-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(275344);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DB31/T 828-2014 &#xA;标题：旧水泥混凝土路面共振碎石化技术规程&#xA;英文标题： &#xA;分类：P22&#xA;ICS：93.080.20 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：上海市质量技术监督局&#xA;发布日期：2014-08-22&#xA;发布日期：2014-12-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/275344.html" target="_blank"><font color="#000000">DB31/T 828-2014</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">旧水泥混凝土路面共振碎石化技术规程</font></td>
+
+              <td ><font color="#000000">
+
+                上海市质量技术监督局
+
+                </font></td>
+
+				<td ><font color="#000000">2014-12-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(304549);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JT/T 1166-2017 &#xA;标题：桥梁高强混凝土抗压强度无损检测&#xA;英文标题： &#xA;分类：P28&#xA;ICS：93.040 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国交通运输部&#xA;发布日期：2017-09-29&#xA;发布日期：2018-02-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/304549.html" target="_blank"><font color="#000000">JT/T 1166-2017</fo
+
+1ff8
+
+this,'#FFFFFF');"  title="编号：T/CECS G：D66-04-2024 &#xA;标题：公路装配式钢筋混凝土涵洞技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-05-22&#xA;发布日期：2024-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/411412.html" target="_blank"><font color="#009900">T/CECS G：D66-04-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">公路装配式钢筋混凝土涵洞技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-10-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(411435);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：T/CECS 1622-2024 &#xA;标题：既有建筑外套钢筋混凝土结构抗震加固技术规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中国工程建设标准化协会&#xA;发布日期：2024-05-28&#xA;发布日期：2024-10-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/411435.html" target="_blank"><font color="#009900">T/CECS 1622-2024</font></a></td>
+
+              <td align="left">&nbsp;<font color="#009900">既有建筑外套钢筋混凝土结构抗震加固技术规程</font></td>
+
+              <td ><font color="#009900">
+
+                中国工程建设标准化协.
+
+                </font></td>
+
+				<td ><font color="#009900">2024-10-01</font></td>
+
+				<td ><font color="#009900">即将实施</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(182608);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：DL/T 5055-2007 &#xA;标题：水工混凝土掺用粉煤灰技术规范&#xA;英文标题： &#xA;分类：P59&#xA;ICS：91.100.10 &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国国家发展和改革委员会&#xA;发布日期：2007-07-20&#xA;发布日期：2007-12-01"> 
+
+              <td align="left">&nbsp;<a href="/detail/182608.html" target="_blank"><font color="#000000">DL/T 5055-2007</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">水工混凝土掺用粉煤灰技术规范</font></td>
+
+              <td ><font color="#000000">
+
+                国家发展和改革委员会
+
+                </font></td>
+
+				<td ><font color="#000000">2007-12-01</font></td>
+
+				<td ><font color="#000000">现行</font></td>
+
+            </tr>
+
+            
+
+            <tr bgcolor="#FFFFFF"  
+
+			    onmouseover="mOvr(this,'#DADAFF');" 
+
+			    onclick="mClk(331916);" 
+
+                onmouseout="mOut(this,'#FFFFFF');"  title="编号：JTS 167-15-2019 &#xA;标题：水运工程预制高强混凝土薄壁钢管桩设计与施工规程&#xA;英文标题： &#xA;分类：&#xA;ICS： &#xA;采标情况： &#xA;替代情况：&#xA;发布部门：中华人民共和国交通运输部&#xA;发布日期：2019-08-02&#xA;发布日期：2019-09-30"> 
+
+              <td align="left">&nbsp;<a href="/detail/331916.html" target="_blank"><font color="#000000">JTS 167-15-2019</font></a></td>
+
+              <td align="left">&nbsp;<font color="#000000">水运工程预制高强混凝土薄壁钢管桩设计与施工规程</font></td>
+
+              <td ><font color="#000000">
+
+                交通运?

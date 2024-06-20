@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "windows.h": "c",
+        "stdio.h": "c",
+        "string.h": "c",
+        "_01_var.h": "c",
+        "_02_function.h": "c",
+        "stdlib.h": "c"
+    },
+    "editor.wordWrapColumn": 150
+}
